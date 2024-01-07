@@ -3,11 +3,14 @@
 @section('title', 'Editar el equipo ' . $team->name)
 
 @section('content')
-    <h1>Aquí está el formulario para editar un curso</h1>
+    <h1>Aquí está el formulario para editar un equipo</h1>
     
-    <form action="" method="">
+    <form action="{{route('teams.update', $team)}}" method="POST">
 
-        
+        {{-- Directiva de generación de token --}}
+        @csrf
+        {{-- Directiva para informar de que se usará el método PUT --}}
+        @method('PUT')
 
         {{-- Campo para el nombre del equipo y mensaje de validación --}}
         <label>

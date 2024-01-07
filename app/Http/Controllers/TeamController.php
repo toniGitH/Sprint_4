@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use App\Http\Requests\StoreTeam;
+use App\Http\Requests\UpdateTeam;
 
 class TeamController extends Controller
 {
+
     /**
      * Display a listing of the resource.
+     * Este método devuelve TODOS los registros de la tabla teams
      */
-    public function index(){ // Este método devuelve TODOS los registros de la tabla teams
-
+    public function index() 
+    { 
         // Esta instrucción devuelve TODOS los registros (sin paginar)
         $teams = Team::all();
         //$teams = Team::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
@@ -37,7 +40,6 @@ class TeamController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreTeam $request){
-
         $team = Team::create($request->all());
         return redirect()->route('teams.show', $team);
     }
@@ -61,9 +63,10 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Team $team, UpdateTeam $request){
+
+        $team->update($request->all());
+        return redirect()->route('teams.show', $team);
     }
 
     /**
