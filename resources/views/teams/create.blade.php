@@ -5,8 +5,8 @@
 @section('content')
     <h1>Aquí está el formulario para crear un equipo</h1>
     
-    <form action="" method="">
-        
+    <form action="{{route('teams.store')}}" method="POST">
+
         {{-- Directiva de generación de token --}}
         @csrf
 

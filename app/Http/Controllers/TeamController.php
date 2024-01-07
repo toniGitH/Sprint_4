@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Team;
+use App\Http\Requests\StoreTeam;
 
 class TeamController extends Controller
 {
@@ -35,9 +36,10 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(StoreTeam $request){
+
+        $team = Team::create($request->all());
+        return redirect()->route('teams.show', $team);
     }
 
     /**
