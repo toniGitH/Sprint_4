@@ -33,7 +33,7 @@ class StoreTeam extends FormRequest
             'name.required' => 'El nombre del equipo es obligatorio',
             'name.min' => 'El nombre del equipo debe contener al menos 3 caracteres',
             'name.unique' => 'El nombre de ese equipo ya existe en la base de datos',
-            'city.required' => 'La ciudad del equipo es obligatoria',
+            'city.required' => 'La ciudad del equipo es obligatoria'
         ];
    }
 
