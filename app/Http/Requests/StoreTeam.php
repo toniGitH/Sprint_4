@@ -23,7 +23,7 @@ class StoreTeam extends FormRequest
     {
         return [
             'name'=>['required', 'min:3', 'unique:teams'],
-            'city'=>'required',
+            'city'=>'required'
         ];
     }
 
@@ -41,7 +41,7 @@ class StoreTeam extends FormRequest
    {
         return [ // elementos comentados porque con el método messages ya tengo suficiente
             //'name' => 'nombre del equipo',
-            //'city' => 'ciudad del equipo',
+            //'city' => 'ciudad del equipo'
         ];
    }
 }
