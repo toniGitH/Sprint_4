@@ -9,7 +9,7 @@
     <ul>
         @foreach ($teams as $team)
             <li>
-                {{$team->name}}
+                <a href="{{route('teams.show', $team->id)}}">{{$team->name}}</a>
             </li>
         @endforeach
     </ul>
