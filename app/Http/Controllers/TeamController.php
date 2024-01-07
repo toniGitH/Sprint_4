@@ -7,7 +7,9 @@ use App\Models\Team;
 
 class TeamController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index(){ // Este método devuelve TODOS los registros de la tabla teams
 
         // Esta instrucción devuelve TODOS los registros (sin paginar)
@@ -27,7 +29,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view("teams.create");
     }
 
     /**

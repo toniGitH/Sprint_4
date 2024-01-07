@@ -14,7 +14,8 @@
         @endforeach
     </ul>
 
-    
+    <a href="{{route('teams.create')}}">Crear Equipo</a>
+
     {{-- PAGINADOR: descomentar esto si se quiere usar el paginador --}}
     {{-- {{$teams->links()}} --}}
 
