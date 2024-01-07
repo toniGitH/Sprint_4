@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+// ESTRUCTURA PARA UN CONTROLADOR QUE SÓLO VA A GESTIONAR UNA RUTA
+Route::get('/', HomeController::class)->name('home');
+Route::get('/home', HomeController::class)->name('home');
+/*Con esta sintáxis, esta ruta va a buscar el método __invoke del controlador HomeController*/
+
