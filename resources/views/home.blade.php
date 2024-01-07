@@ -8,7 +8,7 @@
     <p>Aquí van dos cuadrados con dos enlaces:</p>
 
     <ul>
-        <li>ENLACE A GESTIÓN DE EQUIPOS</li>
+        <li><a href="{{route('teams.index')}}">GESTIÓN DE EQUIPOS</a></li>
         <li>ENLACE A GESTIÓN DE PARTIDOS</li>
     </ul>
 @endsection
