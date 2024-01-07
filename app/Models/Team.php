@@ -18,14 +18,14 @@ class Team extends Model
 
     protected function name(): Attribute{
         return new Attribute(
-            get: fn($value) => ucwords($value), // Accesor
+            get: fn($value) => strtoupper($value), // Accesor
             set: fn($value) => strtolower($value) // Mutador
         );
     }
 
     protected function city(): Attribute{
         return new Attribute(
-            get: fn($value) => ucwords($value), // Accesor
+            get: fn($value) => strtoupper($value), // Accesor
             set: fn($value) => strtolower($value) // Mutador
         );
     }
