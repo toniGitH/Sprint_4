@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Team;
 
 class TeamController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+
+    public function index(){ // Este método devuelve TODOS los registros de la tabla teams
+
+        // Esta instrucción devuelve TODOS los registros (sin paginar)
+        $teams = Team::all();
+        //$teams = Team::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
+        //$teams = Team::orderBy('id', 'desc')->get();// Si lo queremos ordenado hay que usar ->get()
+
+        // Esta instrucción devuelve los registros paginados
+        //$teams = Team::paginate(5);
+        //$teams = Team::orderBy('id', 'desc')->paginate(); //Si lo queremos ordenado
+
+        return view("teams/index", compact('teams'));
     }
 
     /**
