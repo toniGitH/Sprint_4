@@ -37,7 +37,21 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $game = Game::create($request->all());
+        return redirect()->route('games.show', $game);
+        
+        // El código anterior equivale al siguiente:
+        /* 
+            $game = new Game();
+            $game->gameweek = $request->gameweek;
+            $game->date = $request->date;
+            $game->local_team_id = $request->local_team_id;
+            $game->local_score = $request->local_score;
+            $game->visitor_team_id = $request->visitor_team_id;
+            $game->visitor_score = $request->visitor_score;
+            $game->save();
+            return redirect()->route('games.show', $game);
+        */
     }
 
     /**
