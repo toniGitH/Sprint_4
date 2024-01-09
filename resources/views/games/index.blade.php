@@ -21,6 +21,8 @@
         @endforeach
     </ul>
 
+    <a href="{{route('games.create')}}">Crear Partido</a>
+
     {{-- PAGINADOR: descomentar esto si se quiere usar el paginador --}}
     {{-- {{$teams->links()}} --}}
 
