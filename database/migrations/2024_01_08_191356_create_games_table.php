@@ -24,16 +24,6 @@ return new class extends Migration
             // Foreign key restrictions with onDelete('RESTRICT')
             $table->foreign('local_team_id')->references('id')->on('teams')->onDelete('RESTRICT');
             $table->foreign('visitor_team_id')->references('id')->on('teams')->onDelete('RESTRICT');
-            
-            // Composite Unique Key Restriction for local_team_id & visitor_team_id
-            $table->unique(['local_team_id', 'visitor_team_id']);
-
-            // Composite Unique Key Restriction for gameweek, local_team_id & visitor_team_id
-            $table->unique(['gameweek', 'local_team_id']);
-            $table->unique(['gameweek', 'visitor_team_id']);
-
-            // Falta añadir restricción para que en un mismo registro no pueda ser el mismo el equipo local que el visitante
-            // También habría que buscar una restricción para ningún equipo pueda judar dos veces una misma jornada (gameweek)
         });
     }
 
