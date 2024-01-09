@@ -4,14 +4,20 @@
 
 @section('content')
 
+    {{-- ATENCIÓN: ELIMINAR ESTILOS EN LÍNEA Y SUSTITUIR POR TAILWIND --}}
+    
     <h1>Este es el índice de la página de Partidos</h1>
 
-    <ul>
+    <ul style="display:flex">
         @foreach ($games as $game)
-            <li>
-                {{$game->gameweek}}
-                {{$game->local->name}} vs {{$game->visitor->name}}
+        <a href="{{route('games.show', $game->id)}}" style="text-decoration: none; color:white">
+            <li style="display:flex; flex-direction:column; align-items:center; background-color: grey; margin: 10px; padding: 10px; list-style:none;">
+                <span>Jornada: {{$game->gameweek}}</span>
+                <span>Fecha del partido: {{$game->date}}</span>
+                <span>{{$game->local->name}} vs {{$game->visitor->name}}</span>
+                <span>{{$game->local_score}} - {{$game->visitor_score}}</span>
             </li>
+        </a>
         @endforeach
     </ul>
 
