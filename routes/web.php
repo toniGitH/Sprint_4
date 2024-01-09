@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,18 @@ Route::resource('teams', TeamController::class);
     Route::get('teams/{team}/edit', 'edit')->name('teams.edit');
     Route::put('teams/{team}', 'update')->name('teams.update');
     Route::delete('teams/{team}', 'destroy')->name('teams.destroy');
+}); */
+
+// ESTRUCTURA PARA UN CONTROLADOR QUE VA A GESTIONAR VARIAS RUTAS (con Route:resource)
+Route::resource('games', GameController::class);
+
+// ESTRUCTURA PARA UN CONTROLADOR QUE VA A GESTIONAR VARIAS RUTAS (con grupo de rutas-desde Laravel 9) => Equivale a la línea anterior
+/* Route::controller(GameController::class)->group(function () {
+    Route::get('games', 'index')->name('games.index');
+    Route::get('games/create', 'create')->name('games.create');
+    Route::post('games', 'store')->name('games.store');
+    Route::get('games/{game}', 'show')->name('games.show');
+    Route::get('games/{game}/edit', 'edit')->name('games.edit');
+    Route::put('games/{game}', 'update')->name('games.update');
+    Route::delete('games/{game}', 'destroy')->name('games.destroy');
 }); */
