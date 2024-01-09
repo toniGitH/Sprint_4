@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Game;
 
 class GameController extends Controller
 {
@@ -11,7 +12,16 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        // Esta instrucción devuelve TODOS los registros (sin paginar)
+        $games = Game::all();
+        //$teams = Team::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
+        //$teams = Team::orderBy('id', 'desc')->get();// Si lo queremos ordenado hay que usar ->get()
+
+        // Esta instrucción devuelve los registros paginados
+        //$teams = Team::paginate(5);
+        //$teams = Team::orderBy('id', 'desc')->paginate(); //Si lo queremos ordenado
+
+        return view("games/index", compact('games'));
     }
 
     /**
