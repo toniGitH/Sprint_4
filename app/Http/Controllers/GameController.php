@@ -37,6 +37,24 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'gameweek' => 'required',
+            'date' => 'required',
+            'local_team_id' => 'required',
+            'local_score' => 'required',
+            'visitor_team_id' => 'required',
+            'visitor_score' => 'required'
+        ]);
+
+        /* $request->validate([
+            'gameweek.required' => 'La jornada es obligatoria',
+            'date.required' => 'La fecha es obligatoria',
+            'local_team_id.required' => 'Es obligatorio especificar el equipo local',
+            'local_score.required' => 'La anotación del equipo local es obligatoria',
+            'visitor_team_id.required' => 'Es obligatorio especificar el equipo visitante',
+            'visitor_score.required' => 'La anotación del equipo visitante es obligatoria'
+        ]); */
+        
         $game = Game::create($request->all());
         return redirect()->route('games.show', $game);
         
