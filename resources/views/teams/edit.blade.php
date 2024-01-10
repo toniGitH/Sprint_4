@@ -22,7 +22,7 @@
             @enderror
         <br><br>{{-- Eliminar <br> y aplicar css --}}
         
-        {{-- Campo para la categoría del curso y mensaje de validación --}}
+        {{-- Campo para la ciudad del equipo y mensaje de validación --}}
         <label>
             Ciudad del equipo:
             <br>{{-- Eliminar <br> y aplicar css --}}
@@ -33,7 +33,7 @@
             @enderror
         <br><br>{{-- Eliminar <br> y aplicar css --}}
         
-        {{-- Boton/input de tipo submit para enviar el formulario --}}
+        {{-- Boton de tipo submit para enviar el formulario --}}
         <button type="submit">ACTUALIZAR</button>
 
     </form>
