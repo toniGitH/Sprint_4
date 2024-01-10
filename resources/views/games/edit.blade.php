@@ -62,7 +62,7 @@
         {{--Input para la anotación local y su correspondiente mensaje de validación  --}}
         <label>
             Goles marcados:
-            <input type='number' name='local_score' value='{{ old("local_score", $game->local_score) }}' min='0' max='99' placeholder='visit'>
+            <input type='number' name='local_score' value='{{ old("local_score", $game->local_score) }}' min='0' max='99' placeholder='local'>
         </label>
         @error('local_score')
         {{$message}}
