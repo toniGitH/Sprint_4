@@ -74,9 +74,10 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Game $game)
     {
-        //
+        $game->update($request->all());
+        return redirect()->route('games.show', $game);
     }
 
     /**
