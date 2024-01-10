@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Http\Requests\StoreGame;
 
 class GameController extends Controller
 {
@@ -35,26 +36,8 @@ class GameController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreGame $request)
     {
-        $request->validate([
-            'gameweek' => 'required',
-            'date' => ['required', 'after:today'],
-            'local_team_id' => ['required', 'exists:teams,id', 'different:visitor_team_id'],
-            'local_score' => 'required',
-            'visitor_team_id' => ['required', 'exists:teams,id', 'different:local_team_id'],
-            'visitor_score' => 'required'
-        ]);
-
-        /* $request->validate([
-            'gameweek.required' => 'La jornada es obligatoria',
-            'date.required' => 'La fecha es obligatoria',
-            'local_team_id.required' => 'Es obligatorio especificar el equipo local',
-            'local_score.required' => 'La anotación del equipo local es obligatoria',
-            'visitor_team_id.required' => 'Es obligatorio especificar el equipo visitante',
-            'visitor_score.required' => 'La anotación del equipo visitante es obligatoria'
-        ]); */
-        
         $game = Game::create($request->all());
         return redirect()->route('games.show', $game);
         
