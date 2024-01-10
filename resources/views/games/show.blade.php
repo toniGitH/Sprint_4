@@ -13,5 +13,10 @@
         <span>Jornada número: {{$game->gemeweek}}</span>
         <h3 style="font-weight:bold">{{$game->local->name}} {{$game->local_score}} - {{$game->visitor_score}} {{$game->visitor->name}} </h3>
     </div>
-    
+    <br><br>
+    <form action="{{route('games.destroy', $game)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar partido</button>
+    </form>
 @endsection
