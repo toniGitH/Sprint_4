@@ -16,6 +16,10 @@ class Team extends Model
 
     // PENDIENTE INCORPORAR RELACIÓN CON LA TABLA DE ENFRENTAMIENTOS (has/belongs to)
 
+    public function games(){
+        return $this->hasMany('App\Models\Game');
+    }
+
     protected function name(): Attribute{
         return new Attribute(
             get: fn($value) => strtoupper($value), // Accesor
