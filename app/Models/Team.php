@@ -14,10 +14,10 @@ class Team extends Model
     protected $guarded = []; // De esta manera definimos dentro del array aquellas propiedades protegidas de la asignación masiva
     //protected $fillable = ['name', 'city']; // Con esta otra opción, se declara lo que sí está permitido
 
-    // PENDIENTE INCORPORAR RELACIÓN CON LA TABLA DE ENFRENTAMIENTOS (has/belongs to)
-
     public function games(){
         return $this->hasMany('App\Models\Game');
+        /* return $this->hasMany(Game::class); */ // Código equivalente
+
     }
 
     protected function name(): Attribute{

@@ -5,10 +5,11 @@
 @section('content')
     <h1>ESTA ES LA PÁGINA PRINCIPAL</h1>
 
-    <p>Aquí van dos cuadrados con dos enlaces:</p>
+    <p>Aquí van dos cuadrados con dos imágenes que representarán estos dos enlaces:</p>
 
     <ul>
         <li><a href="{{route('teams.index')}}">GESTIÓN DE EQUIPOS</a></li>
-        <li>ENLACE A GESTIÓN DE PARTIDOS</li>
+        <br><br>
+        <li><a href="{{route('games.index')}}">GESTIÓN DE PARTIDOS</a></li>
     </ul>
 @endsection
