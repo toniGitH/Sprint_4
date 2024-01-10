@@ -13,11 +13,11 @@ class Game extends Model
     protected $guarded = []; // De esta manera definimos dentro del array aquellas propiedades protegidas de la asignación masiva
     //protected $fillable = ['date', 'gameweek', 'local_team','local_score','visitor_team','visitor_score']; // Con esta otra opción, se declara lo que sí está permitido
 
-    // PENDIENTE INCORPORAR RELACIÓN CON LA TABLA DE ENFRENTAMIENTOS (has/belongs to)
-
     public function local()
     {
-        return $this->belongsTo(Team::class, 'local_team_id');
+        return $this->belongsTo('App\Models\Team', 'local_team_id');
+        /* return $this->belongsTo(Team::class, 'local_team_id'); */ // Código equivalente
+
     }
     /*
         Este método define una relación entre el modelo TEAM y el modelo GAME
@@ -30,7 +30,8 @@ class Game extends Model
  
     public function visitor()
     {
-        return $this->belongsTo(Team::class, 'visitor_team_id');
+        return $this->belongsTo('App\Models\Team', 'visitor_team_id');
+        /* return $this->belongsTo(Team::class, 'visitor_team_id'); */ // Código equivalente
     }
     /*
         De manerá análoga, este método nos permite acceder al equipo visitante (instancia) asociado a un partido concreto
