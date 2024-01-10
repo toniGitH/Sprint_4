@@ -39,10 +39,10 @@ class GameController extends Controller
     {
         $request->validate([
             'gameweek' => 'required',
-            'date' => 'required',
-            'local_team_id' => 'required',
+            'date' => ['required', 'after:today'],
+            'local_team_id' => ['required', 'exists:teams,id', 'different:visitor_team_id'],
             'local_score' => 'required',
-            'visitor_team_id' => 'required',
+            'visitor_team_id' => ['required', 'exists:teams,id', 'different:local_team_id'],
             'visitor_score' => 'required'
         ]);
 
