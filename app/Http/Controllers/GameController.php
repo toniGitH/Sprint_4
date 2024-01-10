@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Http\Requests\StoreGame;
+use App\Http\Requests\UpdateGame;
 
 class GameController extends Controller
 {
@@ -74,8 +75,8 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Game $game)
-    {
+    public function update(Game $game, UpdateGame $request){
+
         $game->update($request->all());
         return redirect()->route('games.show', $game);
     }
