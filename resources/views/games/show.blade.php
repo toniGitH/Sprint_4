@@ -14,6 +14,8 @@
         <h3 style="font-weight:bold">{{$game->local->name}} {{$game->local_score}} - {{$game->visitor_score}} {{$game->visitor->name}} </h3>
     </div>
     <br><br>
+    <a href="{{route('games.edit', $game)}}"><button>Editar partido</button></a>
+    <br><br>
     <form action="{{route('games.destroy', $game)}}" method="POST">
         @csrf
         @method('delete')
