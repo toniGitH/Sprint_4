@@ -1,0 +1,7 @@
+/* Reglas de ejemlo para probar */
+/* body{
+    background-color: yellow;
+} */
+body{
+    background-image: url("../../public/img/futbol.jpg"); 
+}
