@@ -74,7 +74,13 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        $team->delete();
-        return redirect()->route('teams.index');
+        if ($team->games()) {
+            /* return redirect()->route('ruta.de.tu.vista')->with('mensaje', 'No se puede eliminar el registro principal porque tiene registros secundarios relacionados.'); */
+            return redirect()->route('teams.index');
+        }else{
+            $team->delete();
+            return redirect()->route('teams.index');
+        }
+        
     }
 }
