@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Team;
+use App\Models\Game;
 use App\Http\Requests\StoreTeam;
 use App\Http\Requests\UpdateTeam;
 
@@ -74,7 +75,27 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+        // Añadimos validación previa para determinar si el equipo ha jugado algún partido
+        // Si el equipo ha jugado algún partido, se ejecutará el código del if y ahí acabará la ejecución del método
+        // Si el equipo no ha jugado ningún partido, el flujo se saldrá del dowhile y ejecutará la función delete()
+        
+        $games = Game::all();
+        $i=0;
+        $hasGame=false;
+        do {
+            if ($team->id == $games[$i]->local->id || $team->id == $games[$i]->visitor->id) {
+                $hasGame=true;
+                return redirect()->route('teams.show', $team)->with('warning', 'Esta temporada ya no puedes eliminar este 
+                equipo porque ya ha participado en algún partido');
+            } 
+            else {
+                $i++;
+            }
+        } while ($i<$games->count() && $hasGame==false);
+
+        // Estas dos líneas son las que se encargan de eliminar el registro.
         $team->delete();
         return redirect()->route('teams.index');
+        
     }
 }
