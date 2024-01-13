@@ -1,4 +1,4 @@
-<footer class="flex justify-center bg-gray-800 text-white p-4 text-center mt-auto bg-opacity-75">
+<footer class="flex justify-center bg-gray-800 text-white p-2 text-center mt-auto bg-opacity-90">
     <div class="flex justify-between w-1/3">
         <p class="text-white mt-2">App created by</p>
         <div class="flex items-center justify-center mt-2">
