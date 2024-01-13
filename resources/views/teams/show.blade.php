@@ -1,4 +1,4 @@
-@extends('layouts.crudPage_layout')
+@extends('layouts.teamsCrudPage_layout')
 
 @section('title', 'Datos del equipo ' . $team->name)
 

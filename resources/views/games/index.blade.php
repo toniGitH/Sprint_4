@@ -1,4 +1,4 @@
-@extends('layouts.crudPage_layout')
+@extends('layouts.gamesCrudPage_layout')
 
 @section('title', 'Indice de partidos')
 
