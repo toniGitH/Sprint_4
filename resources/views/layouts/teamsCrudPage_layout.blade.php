@@ -6,6 +6,23 @@
         <title>@yield('title')</title>
         @vite('resources/css/app.css') {{-- Con esta línea se añade la hoja de estilos de css/app --}}
         @vite('resources/css/cruds.css') {{-- Con esta línea se añade la hoja de estilos css/cruds --}}
+        <style>         
+            body::before {
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{{ asset('img/balon_bn.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            opacity: 0.6;
+            z-index: -1;
+        }
+        </style>
     </head>
     <body class="min-h-screen flex flex-col ">
 
