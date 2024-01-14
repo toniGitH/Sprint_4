@@ -22,7 +22,7 @@
             Jornada:
             <select name="gameweek">
                 <option value="">--</option>
-                @for ($i = 1; $i <= 20; $i++)
+                @for ($i = 1; $i <= 22; $i++)
                     <option value="{{ $i }}" {{ old('gameweek', $game->gameweek) == $i ? 'selected' : '' }}>{{ $i }}</option>
                 @endfor
             </select>
