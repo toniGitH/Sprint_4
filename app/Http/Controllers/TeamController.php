@@ -24,7 +24,7 @@ class TeamController extends Controller
 
         // Esta instrucción devuelve los registros paginados
         //$teams = Team::paginate(6);
-        $teams = Team::orderBy('name', 'asc')->paginate(6); //Si lo queremos ordenado
+        $teams = Team::orderBy('name', 'asc')->paginate(9); //Si lo queremos ordenado
         return view("teams/index", compact('teams'));
     }
 
