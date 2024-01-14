@@ -16,18 +16,6 @@
                     </a>
                 @endforeach
         </div>
-        
-
-
-{{--         <div class="grid grid-cols-12 gap-12">
-            @foreach ($teams as $team)
-                <div class="col-span-4 bg-slate-300 text-center py-2 rounded-md">
-                    <a href="{{route('teams.show', $team->id)}}">{{$team->name}}</a>
-                    <p class="opacity-0 hover:opacity-100">Ver datos</p>
-                </div>
-            @endforeach
-        </div> --}}
-        
 
         {{-- PAGINADOR: descomentar esto si se quiere usar el paginador --}}
         {{-- {{$teams->links()}} --}}
