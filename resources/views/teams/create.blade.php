@@ -4,40 +4,41 @@
 
 @section('content')
     
-    <div class="container mt-20">
+    <div class="container mx-auto mt-32 md:mt-20">
 
-        <h1>Aquí está el formulario para crear un equipo</h1>
-        
-        <form action="{{route('teams.store')}}" method="POST">
-
-            {{-- Directiva de generación de token --}}
-            @csrf
-
-            {{-- Campo para el nombre del equipo y mensaje de validación --}}
-            <label>
-                Nombre del equipo:<br>{{-- Eliminar <br> y aplicar css --}}
-                <input type="text" name="name" value="{{old('name')}}">
-            </label>
-                @error('name')
-                    <br><span>*{{$message}}</span><br>
-                @enderror
-            <br><br>{{-- Eliminar <br> y aplicar css --}}
-
-            {{-- Campo para la ciudad del equipo y mensaje de validación --}}
-            <label>
-                Ciudad del equipo:
-                <br>{{-- Eliminar <br> y aplicar css --}}
-                <input type="text" name="city" value="{{old('city')}}">
-            </label>
-                @error('city')
-                    <br><span>*{{$message}}</span><br>
-                @enderror
-            <br><br>{{-- Eliminar <br> y aplicar css --}}
+        <div class="bg-slate-200 opacity-90 w-1/2 mx-auto p-6 flex flex-col justify-center items-center mt-12 gap-y-4 rounded-lg">
             
-            {{-- Boton/input de tipo submit para enviar el formulario --}}
-            <button type="submit">GUARDAR</button>
+            <p class="text-center text-2xl mb-4 font-bold">ALTA DE UN NUEVO EQUIPO</p>
+            
+            <form action="{{route('teams.store')}}" method="POST" class="flex flex-col w-3/4 gap-y-6">
 
-        </form>
+                {{-- Directiva de generación de token --}}
+                @csrf
+    
+                {{-- Input para el nombre del equipo y mensaje de validación --}}
+                <div class="flex flex-col relative">
+                    <label for="nameid" class="text-center mb-1">Nombre del equipo</label>
+                    <input type="text" name="name" id="nameid" value="{{old('name')}}" class="mb-6 rounded-sm">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full text-red-600">
+                        @error('name')*{{$message}}@enderror
+                    </div>
+                </div>
+
+                {{-- Input para la ciudad del equipo y mensaje de validación --}}
+                <div class="flex flex-col relative">
+                    <label for="cityid" class="text-center mb-1">Ciudad del equipo</label>
+                    <input type="text" name="city" id="cityid" value="{{old('city')}}" class="mb-6 rounded-sm">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full text-red-600">
+                        @error('city')*{{$message}}@enderror
+                    </div>
+                </div>
+                
+                {{-- Boton/input de tipo submit para enviar el formulario --}}
+                <button type="submit" class="w-1/3 mx-auto p-2 rounded-md transition-colors duration-300 ease-in-out bg-white hover:bg-red-500 hover:text-white">CREAR EQUIPO</button>
+    
+            </form>
+
+        </div>
 
     </div>
 
