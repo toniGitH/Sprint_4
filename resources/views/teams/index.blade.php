@@ -17,7 +17,7 @@
                     </a>
                 @endforeach
         </div>
-        <div CLASS="bg-slate-300 mt-4">{{$teams->links()}}</div>
+        <div CLASS="bg-slate-300 mt-4">{{$teams->links('vendor.pagination.tailwind')}}</div>
         
     </div>
 
