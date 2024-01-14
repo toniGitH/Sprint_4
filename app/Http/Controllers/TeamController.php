@@ -18,14 +18,13 @@ class TeamController extends Controller
     public function index() 
     { 
         // Esta instrucción devuelve TODOS los registros (sin paginar)
-        $teams = Team::all();
+        //$teams = Team::all();
         //$teams = Team::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
         //$teams = Team::orderBy('id', 'desc')->get();// Si lo queremos ordenado hay que usar ->get()
 
         // Esta instrucción devuelve los registros paginados
-        //$teams = Team::paginate(5);
-        //$teams = Team::orderBy('id', 'desc')->paginate(); //Si lo queremos ordenado
-
+        //$teams = Team::paginate(6);
+        $teams = Team::orderBy('name', 'asc')->paginate(9); //Si lo queremos ordenado
         return view("teams/index", compact('teams'));
     }
 
@@ -42,7 +41,7 @@ class TeamController extends Controller
      */
     public function store(StoreTeam $request){
         $team = Team::create($request->all());
-        return redirect()->route('teams.show', $team);
+        return redirect()->route('teams.show', $team)->with('warning', 'Equipo añadido con éxito');
     }
 
     /**
@@ -67,7 +66,7 @@ class TeamController extends Controller
     public function update(Team $team, UpdateTeam $request){
 
         $team->update($request->all());
-        return redirect()->route('teams.show', $team);
+        return redirect()->route('teams.show', $team)->with('warning', 'Actualización realizada correctamente');
     }
 
     /**

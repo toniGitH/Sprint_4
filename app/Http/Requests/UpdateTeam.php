@@ -21,10 +21,22 @@ class UpdateTeam extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        
+        $team = $this->route('team');
+        if ($team) {
+            return [
+                'name' => "required|min:3|unique:teams,name,$team->id",
+                'city' => 'required',
+            ];
+        }
+        return [];
+        // Este era mi código originalmente, pero fallaba al actualizar un equipo cuando en el formulario
+        // no se cambiaba el nombre del equipo. Decía que ese nombre ya existía en la base de datos. Lo he
+        // tenido que sustituir por el código de más arriba.
+        /* return [
             'name'=>['required', 'min:3', 'unique:teams'],
             'city'=>'required'
-        ];
+        ]; */
     }
 
     public function messages(): array //Con este método puedo personalizar los mensajes de error
