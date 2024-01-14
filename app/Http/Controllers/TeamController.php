@@ -18,14 +18,13 @@ class TeamController extends Controller
     public function index() 
     { 
         // Esta instrucción devuelve TODOS los registros (sin paginar)
-        $teams = Team::all();
+        //$teams = Team::all();
         //$teams = Team::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
         //$teams = Team::orderBy('id', 'desc')->get();// Si lo queremos ordenado hay que usar ->get()
 
         // Esta instrucción devuelve los registros paginados
-        //$teams = Team::paginate(5);
-        //$teams = Team::orderBy('id', 'desc')->paginate(); //Si lo queremos ordenado
-
+        //$teams = Team::paginate(6);
+        $teams = Team::orderBy('name', 'asc')->paginate(6); //Si lo queremos ordenado
         return view("teams/index", compact('teams'));
     }
 
