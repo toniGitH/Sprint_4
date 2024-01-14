@@ -6,7 +6,7 @@
     
     <div class="container mx-auto mt-32 md:mt-20">
 
-        <div class="bg-slate-200 opacity-90 w-1/2 mx-auto p-6 flex flex-col justify-center items-center mt-12 gap-y-4 rounded-lg">
+        <div class="bg-slate-200 opacity-90 w-5/6 md:w-1/2 mx-auto p-6 flex flex-col justify-center items-center mt-12 gap-y-4 rounded-lg">
             
             <p class="text-center text-2xl mb-4 font-bold">ALTA DE UN NUEVO EQUIPO</p>
             
@@ -34,7 +34,7 @@
                 </div>
                 
                 {{-- Boton/input de tipo submit para enviar el formulario --}}
-                <button type="submit" class="w-1/3 mx-auto p-2 rounded-md transition-colors duration-300 ease-in-out bg-white hover:bg-red-500 hover:text-white">CREAR EQUIPO</button>
+                <button type="submit" class="w-3/4 lg:w-1/3 mx-auto p-2 rounded-md transition-colors duration-300 ease-in-out bg-white hover:bg-green-500 hover:text-white">CREAR EQUIPO</button>
     
             </form>
 
