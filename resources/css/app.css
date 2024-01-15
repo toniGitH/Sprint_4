@@ -1,0 +1,10 @@
+/* 
+    Estas directivas "importan" todas las funcionalidades de Tailwind, y por eso cuando se utiliza la directiva 
+    @vite('resources/css/app.css') en las diferentes vistas, se aplican todas las clases tailwind que hayamos incorporado a las
+    etiquetas html de esas vistas.
+    Estas directivas hay que copiarlas manualmente tras instalar Tailwind, porque no se crean de forma automática
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
