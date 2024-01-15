@@ -94,7 +94,7 @@ class TeamController extends Controller
 
         // Estas dos líneas son las que se encargan de eliminar el registro.
         $team->delete();
-        return redirect()->route('teams.index');
+        return redirect()->route('teams.index')->with('warning', '¡¡ Equipo eliminado con éxito !!');
         
     }
 }

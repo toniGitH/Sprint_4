@@ -5,6 +5,11 @@
 @section('content')
 
     <div class="container pb-16 mt-32 mx-auto relative md:static md:w-3/4">
+        @if (session('warning'))
+            <div class="w-11/12 lg:w-1/2 p-20 text-3xl text-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 alert alert-info mx-auto bg-red-500 rounded-xl text-white font-semibold z-50">
+                {{ session('warning') }}
+            </div>
+        @endif
         <div class="absolute left-1/2 transform -translate-x-1/2 bottom-5 md:bottom-20">{{$teams->links('vendor.pagination.simple-tailwind')}}</div>
         <div class="flex flex-col  text-white items-center mb-4 md:grid grid-cols-12 gap-10 mt-14 md:mt-8">
                 @foreach ($teams as $team)
