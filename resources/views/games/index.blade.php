@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container pb-16 mx-auto mt-32 md:mt-20 relative md:static md:w-3/4">
+<div class="container pb-16 mx-auto mt-32 lg:mt-20 relative md:static md:w-3/4">
     <div class="absolute left-1/2 transform -translate-x-1/2 bottom-5 md:bottom-20">{{$games->links('vendor.pagination.simple-tailwind')}}</div>
     <div class="flex flex-col text-white items-center mb-4 md:grid grid-cols-12 gap-5 mt-14 md:mt-8">
             @foreach ($games as $game)
