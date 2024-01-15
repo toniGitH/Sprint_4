@@ -18,7 +18,7 @@
                 @method('PUT')
 
                 {{-- Input para el nombre del equipo y mensaje de validación --}}
-                <div class="flex flex-col relative">
+                <div class="flex flex-col relative pb-5 lg:pb-0">
                     <label for="nameid" class="text-center mb-1">Nombre del equipo</label>
                     <input type="text" name="name" id="nameid" value="{{old('name', $team->name)}}" class="mb-6 rounded-sm">
                     <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full text-red-600">
@@ -27,7 +27,7 @@
                 </div>
 
                 {{-- Input para la ciudad del equipo y mensaje de validación --}}
-                <div class="flex flex-col relative">
+                <div class="flex flex-col relative pb-5 lg:pb-0">
                     <label for="cityid" class="text-center mb-1">Ciudad del equipo</label>
                     <input type="text" name="city" id="cityid" value="{{old('city', $team->city)}}" class="mb-6 rounded-sm">
                     <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full text-red-600">
