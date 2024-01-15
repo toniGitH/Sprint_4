@@ -34,17 +34,17 @@ class UpdateGame extends FormRequest
     public function messages(): array //Con este método puedo personalizar los mensajes de error
     {
         return [
-            'gameweek.required' => 'El número de jornada es obligatorio',
-            'date.required' => 'La fecha del partido es obligatoria',
-            'date.before_or_equal' => 'No puedes dar de alta un resultado futuro',
-            'local_team_id.required' => 'Debes indicar el nombre del equipo local',
-            'local_team_id.exists' => 'Ese equipo no está dado de alta en la base de datos',
-            'local_team_id.different' => 'El equipo local no puede ser el mismo que el equipo visitante',
-            'local_score.required' => 'Debes indicar la anotación del equipo local',
-            'visitor_team_id.required' => 'Debes indicar el nombre del equipo local',
-            'visitor_team_id.exists' => 'Ese equipo no está dado de alta en la base de datos',
-            'visitor_team_id.different' => 'El equipo visitante no puede ser el mismo que el equipo local',
-            'visitor_score.required' => 'Debes indicar la anotación del equipo visitante'   
+            'gameweek.required' => 'La jornada es obligatoria',
+            'date.required' => 'La fecha es obligatoria',
+            'date.before_or_equal' => 'No puede ser fecha futura',
+            'local_team_id.required' => 'El equipo local es obligatorio',
+            'local_team_id.exists' => 'Ese equipo no existe',
+            'local_team_id.different' => 'Debe ser diferente al visitante',
+            'local_score.required' => 'La anotación es obligatoria',
+            'visitor_team_id.required' => 'El equipo visitante es obligatorio',
+            'visitor_team_id.exists' => 'Ese equipo no existe',
+            'visitor_team_id.different' => 'Debe ser diferente al local',
+            'visitor_score.required' => 'La anotación es obligatoria'   
         ];
     }
 
