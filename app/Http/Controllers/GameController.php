@@ -21,7 +21,7 @@ class GameController extends Controller
 
         // Esta instrucción devuelve los registros paginados
         //$games = Game::paginate(5);
-        $games = Game::orderBy('gameweek', 'asc')->paginate(9); //Si lo queremos ordenado
+        $games = Game::orderBy('gameweek', 'asc')->paginate(6); //Si lo queremos ordenado
         return view("games/index", compact('games'));
     }
 
