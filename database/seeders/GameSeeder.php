@@ -65,5 +65,59 @@ class GameSeeder extends Seeder
         $game6->local_score = 0;
         $game6->visitor_score = 3;
         $game6->save();
+
+        $game7 = new Game();
+        $game7->gameweek = 2;
+        $game7->date = "2024-01-08";
+        $game7->local_team_id = 2;
+        $game7->visitor_team_id = 3;
+        $game7->local_score = 4;
+        $game7->visitor_score = 3;
+        $game7->save();
+
+        $game8 = new Game();
+        $game8->gameweek = 2;
+        $game8->date = "2024-01-08";
+        $game8->local_team_id = 4;
+        $game8->visitor_team_id = 5;
+        $game8->local_score = 0;
+        $game8->visitor_score = 0;
+        $game8->save();
+
+        $game9 = new Game();
+        $game9->gameweek = 2;
+        $game9->date = "2024-01-08";
+        $game9->local_team_id = 6;
+        $game9->visitor_team_id = 7;
+        $game9->local_score = 7;
+        $game9->visitor_score = 3;
+        $game9->save();
+
+        $game10 = new Game();
+        $game10->gameweek = 2;
+        $game10->date = "2024-01-08";
+        $game10->local_team_id = 8;
+        $game10->visitor_team_id = 9;
+        $game10->local_score = 1;
+        $game10->visitor_score = 3;
+        $game10->save();
+
+        $game11 = new Game();
+        $game11->gameweek = 2;
+        $game11->date = "2024-01-08";
+        $game11->local_team_id = 10;
+        $game11->visitor_team_id = 11;
+        $game11->local_score = 5;
+        $game11->visitor_score = 5;
+        $game11->save();
+
+        $game12 = new Game();
+        $game12->gameweek = 2;
+        $game12->date = "2024-01-08";
+        $game12->local_team_id = 12;
+        $game12->visitor_team_id = 1;
+        $game12->local_score = 0;
+        $game12->visitor_score = 3;
+        $game12->save();
     }
 }
