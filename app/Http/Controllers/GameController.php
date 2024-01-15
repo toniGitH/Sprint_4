@@ -15,14 +15,13 @@ class GameController extends Controller
     public function index()
     {
         // Esta instrucción devuelve TODOS los registros (sin paginar)
-        $games = Game::all();
-        //$teams = Team::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
-        //$teams = Team::orderBy('id', 'desc')->get();// Si lo queremos ordenado hay que usar ->get()
+        //$games = Game::all();
+        //$games = Game::orderBy('name', 'asc')->get();// Si lo queremos ordenado hay que usar ->get()
+        //$games = Game::orderBy('id', 'desc')->get();// Si lo queremos ordenado hay que usar ->get()
 
         // Esta instrucción devuelve los registros paginados
-        //$teams = Team::paginate(5);
-        //$teams = Team::orderBy('id', 'desc')->paginate(); //Si lo queremos ordenado
-
+        //$games = Game::paginate(5);
+        $games = Game::orderBy('gameweek', 'asc')->paginate(9); //Si lo queremos ordenado
         return view("games/index", compact('games'));
     }
 
