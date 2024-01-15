@@ -4,9 +4,36 @@
 
 @section('content')
 
-    {{-- ATENCIÓN: ELIMINAR ESTILOS EN LÍNEA Y SUSTITUIR POR TAILWIND --}}
+    <div class="container mx-auto mt-32 md:mt-20">
 
-    <div style="display:flex; flex-direction:column; align-items:center; background-color: grey; margin: 10px; padding: 10px;">
+        <div class="bg-slate-200 opacity-90 w-1/2 mx-auto p-6 flex flex-col justify-center items-center mt-12 gap-y-4 rounded-lg">
+            <p class="text-xl font-bold text-slate-500 text-center">JORNADA <span class="text-black font-bold">{{$game->gameweek}}</span></p>
+            <p class="text-xl font-bold text-slate-500 text-center">FECHA <span class="text-black font-bold">{{$game->date}}</span></p>
+            {{-- <p class="text-3xl font-bold text-center"> {{$game->date}}</p> --}}
+            <p class="text-4xl font-bold text-center">{{$game->local->name}} {{$game->local_score}} : <span class="bg-gray-400">{{$game->visitor_score}}</span> {{$game->visitor->name}}</p>
+
+            <div class="mt-3 w-full gap-4 lg:w-1/2 flex flex-col lg:flex-row justify-between items-center mx-auto">
+                <a href="{{route('games.edit', $game)}}">
+                    <button class="p-2 rounded-md transition-colors duration-300 ease-in-out bg-white hover:bg-green-500 hover:text-white">Editar partido</button>
+                </a>
+                <form action="{{route('games.destroy', $game)}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="p-2 rounded-md transition-colors duration-300 ease-in-out bg-white hover:bg-red-500 hover:text-white">Eliminar partido</button>
+                </form>
+            </div>
+        </div>
+
+        @if (session('warning'))
+            <div class="w-4/6 alert alert-info mx-auto mt-8 bg-red-500 text-center mb-6 py-4 rounded-xl text-white font-semibold">
+                {{ session('warning') }}
+            </div>
+        @endif
+        
+    </div>
+
+    
+    {{-- <div style="display:flex; flex-direction:column; align-items:center; background-color: grey; margin: 10px; padding: 10px;">
         <h1>Datos del partido</h1>
         <h2>Jornada número: {{$game->gameweek}}</h2>
         <span>Fecha del partido: {{$game->date}}</span>
@@ -20,5 +47,5 @@
         @csrf
         @method('delete')
         <button type="submit">Eliminar partido</button>
-    </form>
+    </form> --}}
 @endsection
