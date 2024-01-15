@@ -41,7 +41,7 @@ class TeamController extends Controller
      */
     public function store(StoreTeam $request){
         $team = Team::create($request->all());
-        return redirect()->route('teams.show', $team)->with('warning', 'Equipo añadido con éxito');
+        return redirect()->route('teams.show', $team)->with('warning', '¡¡ Equipo creado con éxito !!');
     }
 
     /**

@@ -39,7 +39,7 @@ class GameController extends Controller
     public function store(StoreGame $request)
     {
         $game = Game::create($request->all());
-        return redirect()->route('games.show', $game);
+        return redirect()->route('games.show', $game)->with('warning', '¡¡ Partido creado con éxito !!');
         
         // El código anterior equivale al siguiente:
         /* 
