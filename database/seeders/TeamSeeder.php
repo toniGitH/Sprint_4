@@ -15,6 +15,9 @@ class TeamSeeder extends Seeder
     {
         // Seeder con datos de prueba para rellenar la tabla teams de la base de datos
         // No uso factories para poder especificar datos más reales manualmente
+        // Esta estructura es muy manual, pero funciona correctamente. La sintáxis más abreviada y correcta está
+        // después de estas líneas
+
         $team1 = new Team();
         $team1->name = "New Team";
         $team1->city = "Tokio";
@@ -74,5 +77,17 @@ class TeamSeeder extends Seeder
         $team12->name = "Stampton FC";
         $team12->city = "Hokkaido";
         $team12->save();
+
+        // Esta sintáxis sería más correcta y más reducida (un "Team::create" para cada eqjuipo que queremos crear):
+        /*
+            Team::create([
+                'name' => "New Team",
+                'city' => "Tokio"
+            ]);
+            Team::create([
+                'name' => "Otomo",
+                'city' => "Tokio"
+            ])
+        */
     }
 }
